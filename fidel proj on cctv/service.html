@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+
+      *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+    }
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #2878EB;
+    --bs-secondary: #F14D5D;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #ECF4FF;
+    --bs-dark: #120F2D;
+}
+
+   html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: auto 50px;
+  font-size: 3em;
+  font-family: sans-serif;
+  color: var(--bs-blue);
+  font-weight: bold;
+}
+
+span {
+  color: var(--bs-danger);
+}
+
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+ul li a {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: var(--bs-dark);
+  margin: auto 8px; 
+  transition: .6s;
+}
+
+.fff {
+  color: var(--bs-blue);
+}
+
+ul li a:hover {
+  transition-timing-function: ease-in;
+  transition-duration: .4s;
+  transition-delay: .1s;
+  color: var(--bs-blue)
+}
+
+select {
+  border: none;
+}
+
+ul .btn {
+  padding: 30px 50px;
+  margin-left: 40px;
+  background: var(--bs-danger);
+  color: var(--bs-light);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* stylin for hamburger */
+.hamburger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 45px;
+  gap: 5px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.255);
+  border-radius: 4px;
+  transition: .3s;
+
+}
+
+.hamburger span {
+  width: 30px;
+  height: 1px;
+  color: black;
+  border: 2px solid;
+  border-radius: 3px;
+}
+
+    header {
+      background-image: linear-gradient(rgba(27, 27, 101, 0.53), rgba(0, 0, 0, 0.415)), url(./image/about.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 60vh;
+      height: 400px;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-family: sans-serif;
+      color: var(--bs-light);
+      text-align: center;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    header label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    header a {
+      text-transform: capitalize;
+      font-family: sans-serif;
+      font-size: 22px;
+      color: var(--bs-light);
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 60vh;
+    }
+.service-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 7em auto;
+}
+
+.ser {
+  letter-spacing: 1vh;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  color: var(--bs-blue);
+}
+
+.service-flex h4 {
+  width: 40%;
+  font-size: 50px;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--bs-dark);
+}
+
+.small .img img {
+  width: 40%;
+  margin: 40px;
+}
+
+.slave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: auto 3em;
+  margin-bottom: 26px;
+}
+
+.small {
+  /* border: 2px solid; */
+  margin: 20px;
+  width: 30%;
+  height: 400px;
+  background: var(--bs-light);
+  color: var(--bs-light);
+  border-radius: 3px;
+  box-shadow: 0px 5px 0px var(--bs-blue);
+ transition: .5s;
+  position: relative;
+  z-index: 1;
+}
+
+
+.small::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: var(--bs-blue);
+  top: 0;
+  left: 0;
+  transition: .3s;
+  z-index: -1;
+}
+
+.small::after:hover {
+  width: 100%;
+}
+
+.small .texxt {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  margin: auto 25px;
+}
+
+.small .texxt p:hover {
+  color: var(--bs-light);
+}
+
+.small .texxt p {
+  font-size: 23px;
+  font-family: sans-serif;
+  color: var(--bs-blue);
+}
+
+.small .texxt h5 {
+  font-size: 27px;
+  font-family: sans-serif;
+  margin-bottom: 25px;
+  color: var(--bs-dark);
+}
+
+.small .texxt h5:hover {
+  color: var(--bs-light);
+}
+
+.small .texxt .con {
+  width: 90%;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.small .btn {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 20px;
+  color: var(--bs-blue);
+}
+
+.small .btn:hover {
+  color: var(--bs-light);
+}
+
+/* offficial offer */
+
+
+.official-offer {
+  display: flex;
+  /* border: 2px solid black; */
+  margin: 5em auto;
+}
+
+.official-child {
+  width: 100%;
+}
+.centering-official {
+  background: linear-gradient(rgba(0, 0, 255, 0.231), rgba(0, 0, 0, 0.681)), url(./image/carousel-2.jpg);
+  min-height: 80vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+
+.centering-official .firs {
+  font-size: 21px;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+}
+
+.centering-official h4 {
+  width: 50%;
+  place-self: center;
+  font-size: 45px;
+  font-family: sans-serif;
+  font-weight: 550px;
+  margin-bottom: 25px;
+}
+
+.octext {
+  /* margin-bottom: 30px; */
+  color: var(--bs-light);
+  text-align: center;
+}
+
+.centering-official .con {
+  width: 50%;
+  place-self: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.Official-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.centering-official .btn,
+.centering-official .btn-j{
+  cursor: pointer;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  background: var(--bs-blue);
+  border: none;
+  color: var(--bs-light);
+  border-radius: 3px;
+  transition: .5s;
+}
+
+.centering-official .btn-j {
+  background: var(--bs-danger);
+  transition: .5s;
+}
+
+.centering-official .btn:hover {
+
+  background: var(--bs-danger);
+}
+
+.centering-official .btn-j:hover {
+
+  background: var(--bs-blue);
+}
+
+/* Testimonies
+WHAT PEOPLE SAY ABOUT OUR SERVICE */
+
+.rapper-ts {
+  display: flex;
+  justify-content: center;align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 20px;
+  min-height: 100vh;
+}
+
+.rapper-ts p {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: var(--bs-blue);
+  margin-bottom: 20px;
+
+}
+
+.rapper-ts h4 {
+  font-size: 45px;
+  font-family: sans-serif;
+  text-align: center;
+  color: var(--bs-dark);
+}
+
+/* quick link styling */
+
+
+.child-quicklink {
+  background: #120F2D;
+}
+
+.rapper-quicklink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 7em;
+  /* min-height: -100vh; */
+  color: var(--bs-light);
+}
+
+.content-rapper {
+  width: 200px;
+  height: 300px;
+}
+
+.content-rapper h5 {
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+}
+
+.content-rapper p{
+  font-size: 13px;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+}
+
+.content-rapper a{
+  display: flex;
+  font-size: 13px;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: var(--bs-light);
+}
+
+.icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background: var(--bs-blue);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.icon-btn .icon:hover {
+  background: var(--bs-danger);
+}
+
+.icon-btn .icon:focus {
+    outline:  4px solid var(--bs-blue);
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-8em);
+}
+
+.child-quicklink .input input {
+  width: 400px;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  outline:  none;
+  font-size: 17px;
+  font-family: sans-serif;
+  padding: 20px;
+  background: var(--bs-light);
+  transition: .3s;
+}
+
+.child-quicklink .input input:focus {
+ outline:  4px solid var(--bs-blue);
+
+}
+
+.child-quicklink .btn {
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background: var(--bs-blue);
+  color: var(--bs-light);
+  border: none;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  transform: translateX(-2px);
+  transition: .3s;
+}
+
+.child-quicklink .btn:hover {
+  background: var(--bs-danger);
+}
+
+/* style for footer */
+
+footer {
+  background: var(--bs-blue);
+  padding: 23px;
+}
+
+.parent-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: var(--bs-light);
+  font-family: tahoma;
+  font-size: 15px;
+}
+
+.childfooter-rapper {
+ display: flex;
+ justify-content: center;
+ align-items: center; 
+}
+
+.fbi {
+  border-bottom: 1px solid;
+}
+.fidel {
+  color: var(--bs-light);
+  border-bottom: 1px solid;
+}
+
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+   <nav>
+    <a href="" class="logo">Safe<span>Cam</span></a>
+
+    <ul>
+      <li><a href="index.html" class="fff">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="">Page <select></select></a></li>
+      <li><a href="">Contact</a></li>
+
+      <button class="btn">+123 456 789</button>
+    </ul>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <h1>SERVICE</h1>
+
+      <label>
+        <a href="">home</a>
+        <a href="">service</a>
+      </label>
+    </div>
+  </header>
+  <!-- service section -->
+
+      <section class="service">
+
+      <div class="service-display">
+
+        <div class="service-flex">
+
+          <p class="ser">SERVICES</p>
+
+          <h4>Our Excellent CCTV Security Services</h4>
+
+            <div class="slave">
+
+              <div class="small">
+                <div class="img">
+              <img src="./image/team-1.jpg" alt="icon">
+              </div>
+
+              <div class="texxt">
+              <p>CCTV</p>
+              <h5>Installation</h5>
+
+              <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+
+              <div class="small">
+              <div class="img">
+              <img src="./image/team-1.jpg" alt="icon">
+              </div>
+
+              <div class="texxt">
+              <p>CCTV</p>
+              <h5>Configuration</h5>
+
+              <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+
+             
+              <div class="small">
+                <div class="img">
+                  <img src="./image/team-1.jpg" alt="icon">
+                </div>
+
+                <div class="texxt">
+                  <p>CCTV</p>
+                <h5>Maintenance</h5>
+
+                <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+            </div>
+
+            <div class="slave">
+
+                <div class="small">
+                <div class="img">
+              <img src="./image/team-1.jpg" alt="icon">
+              </div>
+
+              <div class="texxt">
+              <p>CCTV</p>
+              <h5>Repair & Service</h5>
+
+              <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+
+                <div class="small">
+                <div class="img">
+              <img src="./image/team-1.jpg" alt="icon">
+              </div>
+
+              <div class="texxt">
+              <p>CCTV</p>
+              <h5>Monitoring</h5>
+
+              <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+
+                <div class="small">
+                  <div class="img">
+              <img src="./image/team-1.jpg" alt="icon">
+                  </div>
+
+                  <div class="texxt">
+              <p>CCTV</p>
+              <h5>Access Control</h5>
+
+              <p class="con">Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+
+              <button class="btn">Read More</button>
+              </div>
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+
+    </section>
+
+        <!-- official offer -->
+    <section class="official-offer">
+
+        <div class="official-child">
+
+          <div class="centering-official">
+            
+            <div class="octext">
+            <p class="firs">SPECIAL OFFER</p>
+            <H4>Save 50% On All Items Your First Order</H4>
+
+            <P class="con">Eirmod sed tempor lorem ut dolores sit kasd ipsum. Dolor ea et dolore et at sea ea at dolor justo ipsum duo rebum sea. Eos vero eos vero ea et  dolore eirmod et. Dolores diam duo lorem. Elitr ut dolores magna sit. Sea dolore sed et.</P>
+            </div>
+
+            <div class="Official-btn">
+
+              <button class="btn">Order Now</button>
+              <button class="btn-j">Read More</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIES -->
+     <!-- WHAT PEOPLE SAY ABOUT OUR SERVICES SECTION -->
+
+     <section class="testimonies">
+
+      <div class="parent-ts">
+
+        <div class="child-ts">
+
+          <div class="rapper-ts">
+
+            <p>T E S T I M O N A L</p>
+            <h4>What People Say About <br>Our Services</h4>
+          </div>
+        </div>
+      </div>
+     </section>
+
+     <!-- Quick links to footer -->
+        <!-- QUICK LINKS SECTION -->
+
+        <section class="quick-links">
+
+          <div class="parantquicklink">
+
+            <div class="child-quicklink">
+
+              <div class="rapper-quicklink">
+
+                <div class="content-rapper">
+                  <h5>Quick Links</h5>
+
+                  <a href="index.html">Home</a>
+
+                  <a href="index.html">About Us</a>
+
+                  <a href="index.html">Our Services</a>
+
+                  <a href="index.html">Latest Blog</a>
+
+                  <a href="index.html">Contact Us</a>
+                </div>
+
+
+                <div class="content-rapper">
+                  <h5>Popular Links</h5>
+
+                  <a href="index.html">Home</a>
+
+                  <a href="index.html">About Us</a>
+
+                  <a href="index.html">Our Services</a>
+
+                  <a href="index.html">Latest Blog</a>
+
+                  <a href="indeX">Contact Us</a>
+                </div>
+
+                <div class="content-rapper">
+                  <h5>Get In Touch</h5>
+
+                  <p>123 street, New York, USA</p>
+
+                  <p>info@fbi.com</p>
+
+                  <p>+2348106317486</p>
+                </div>
+
+                <div class="content-rapper">
+                  <h5>Follow Us</h5>
+
+                  <div class="icon-btn">
+
+                  <div class="icon"></div>
+
+                  <div class="icon"></div>
+
+                  <div class="icon"></div>
+
+                  <div class="icon"></div>
+                  
+                  </div>
+
+                </div>
+
+               
+              </div>
+               <div class="message">
+
+                  <div class="input"><input type="email" placeholder="Your Email"></div>
+
+                  <button class="btn">Sign Up</button>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+         <div class="parent-footer">
+          <div class="childfooter-rapper">
+        &copy;
+      <p class="fbi">Your Site Name.</p>
+      <p>All Rights Reserved.</p>
+      </div>
+
+          <div class="childfooter-rapper">
+            <p>Designed by <span class="fidel">FBI Codex</span></p>
+    
+      </div>
+      </footer>
+</body>
+</html>
